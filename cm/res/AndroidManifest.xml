@@ -22,6 +22,32 @@
     coreApp="true" android:sharedUserId="android.uid.system"
     android:sharedUserLabel="@string/cyanogenmod_system_label">
 
+    <!-- ARIEL FRAMEWORK -->
+    <!-- Ariel IntentFirewall broadcasts -->
+    <protected-broadcast android:name="ariel.intent.action.APPLICATION_BLOCKED" />
+    <protected-broadcast android:name="ariel.intent.action.SERVICE_BLOCKED" />
+    <protected-broadcast android:name="ariel.intent.action.BROADCAST_BLOCKED" />
+    <protected-broadcast android:name="ariel.intent.action.UPDATE_FW" />
+
+    <!-- Allows an application to write to CM system settings -->
+    <permission android:name="ariel.permission.WRITE_SETTINGS"
+                android:protectionLevel="signature|privileged" />
+
+    <permission android:name="ariel.permission.LOCK_SCREEN"
+        android:protectionLevel="signature|privileged" />
+
+    <permission android:name="ariel.permission.INTENT_FIREWALL"
+                android:protectionLevel="signature|privileged|development" />
+
+    <!-- Allows an application to write to secure CM system settings.
+        <p>Not for use by third-party applications. -->
+    <permission android:name="ariel.permission.WRITE_SECURE_SETTINGS"
+                android:protectionLevel="signature|privileged|development" />
+
+    <permission android:name="ariel.permission.ACCESS_FIREWALL_MANAGER"
+        android:protectionLevel="signature|privileged|development"/>
+    <!-- ARIEL FRAMEWORK -->
+
     <protected-broadcast android:name="cyanogenmod.intent.action.SCREEN_CAMERA_GESTURE" />
     <protected-broadcast android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
     <protected-broadcast android:name="cyanogenmod.intent.action.ACTION_AUDIO_SESSIONS_CHANGED"

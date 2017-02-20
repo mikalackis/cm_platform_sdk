@@ -30,6 +30,7 @@ cm_stub_packages := cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:c
 # ============================================================
 include $(CLEAR_VARS)
 
+ariel_sdk_src := sdk/src/java/ariel
 cyanogenmod_sdk_src := sdk/src/java/cyanogenmod
 cyanogenmod_sdk_internal_src := sdk/src/java/org/cyanogenmod/internal
 library_src := cm/lib/main/java
@@ -48,6 +49,7 @@ LOCAL_JAVA_LIBRARIES := \
     $(cmsdk_LOCAL_JAVA_LIBRARIES)
 
 LOCAL_SRC_FILES := \
+    $(call all-java-files-under, $(ariel_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_internal_src)) \
     $(call all-java-files-under, $(library_src))
@@ -63,6 +65,7 @@ LOCAL_SRC_FILES := \
 ##
 ## READ ME: ########################################################
 LOCAL_SRC_FILES += \
+    $(call all-Iaidl-files-under, $(ariel_sdk_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
 
@@ -116,6 +119,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
+    $(call all-java-files-under, $(ariel_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src))
 
@@ -175,6 +179,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
+    $(call all-java-files-under, $(ariel_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_internal_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
@@ -203,6 +208,7 @@ include $(BUILD_STATIC_JAVA_LIBRARY)
 # ===========================================================
 # Common Droiddoc vars
 cmplat_docs_src_files := \
+    $(call all-java-files-under, $(ariel_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
     $(call all-html-files-under, $(cyanogenmod_sdk_src))
 
