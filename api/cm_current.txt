@@ -464,7 +464,6 @@ package cyanogenmod.hardware {
     method public deprecated int getDisplayGammaCalibrationMax();
     method public deprecated int getDisplayGammaCalibrationMin();
     method public cyanogenmod.hardware.DisplayMode[] getDisplayModes();
-    method public cyanogenmod.hardware.TouchscreenGesture[] getTouchscreenGestures();
     method public static cyanogenmod.hardware.CMHardwareManager getInstance(android.content.Context);
     method public java.lang.String getLtoDestination();
     method public long getLtoDownloadInterval();
@@ -475,6 +474,7 @@ package cyanogenmod.hardware {
     method public java.lang.String getSerialNumber();
     method public int getSupportedFeatures();
     method public int getThermalState();
+    method public cyanogenmod.hardware.TouchscreenGesture[] getTouchscreenGestures();
     method public java.lang.String getUniqueDeviceId();
     method public int getVibratorDefaultIntensity();
     method public int getVibratorIntensity();
@@ -516,8 +516,8 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_SUNLIGHT_ENHANCEMENT = 256; // 0x100
     field public static final deprecated int FEATURE_TAP_TO_WAKE = 512; // 0x200
     field public static final int FEATURE_THERMAL_MONITOR = 32768; // 0x8000
-    field public static final int FEATURE_TOUCH_HOVERING = 2048; // 0x800
     field public static final int FEATURE_TOUCHSCREEN_GESTURES = 524288; // 0x80000
+    field public static final int FEATURE_TOUCH_HOVERING = 2048; // 0x800
     field public static final int FEATURE_UNIQUE_DEVICE_ID = 65536; // 0x10000
     field public static final int FEATURE_VIBRATOR = 1024; // 0x400
   }
@@ -544,15 +544,6 @@ package cyanogenmod.hardware {
     method public int[] toRGB();
     method public static cyanogenmod.hardware.HSIC unflattenFrom(java.lang.String) throws java.lang.NumberFormatException;
     method public void writeToParcel(android.os.Parcel, int);
-  }
-
-  public class TouchscreenGesture implements android.os.Parcelable {
-    ctor public TouchscreenGesture(int, java.lang.String, int);
-    method public int describeContents();
-    method public void writeToParcel(android.os.Parcel, int);
-    field public final int id;
-    field public final java.lang.String name;
-    field public final int keycode;
   }
 
   public abstract interface IThermalListenerCallback implements android.os.IInterface {
@@ -645,6 +636,15 @@ package cyanogenmod.hardware {
     field public static final int STATE_WARM_RISING = 2; // 0x2
   }
 
+  public class TouchscreenGesture implements android.os.Parcelable {
+    ctor public TouchscreenGesture(int, java.lang.String, int);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public final int id;
+    field public final int keycode;
+    field public final java.lang.String name;
+  }
+
 }
 
 package cyanogenmod.media {
@@ -710,11 +710,14 @@ package cyanogenmod.platform {
   public static final class Manifest.permission {
     ctor public Manifest.permission();
     field public static final java.lang.String ACCESS_APP_SUGGESTIONS = "cyanogenmod.permission.ACCESS_APP_SUGGESTIONS";
+    field public static final java.lang.String ACCESS_FIREWALL_MANAGER = "ariel.permission.ACCESS_FIREWALL_MANAGER";
     field public static final java.lang.String ACCESS_THEME_MANAGER = "cyanogenmod.permission.ACCESS_THEME_MANAGER";
     field public static final java.lang.String ACCESS_WEATHER_MANAGER = "cyanogenmod.permission.ACCESS_WEATHER_MANAGER";
     field public static final java.lang.String BIND_WEATHER_PROVIDER_SERVICE = "cyanogenmod.permission.BIND_WEATHER_PROVIDER_SERVICE";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
+    field public static final java.lang.String INTENT_FIREWALL = "ariel.permission.INTENT_FIREWALL";
     field public static final java.lang.String LIVE_LOCK_SCREEN_MANAGER_ACCESS = "cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS";
+    field public static final java.lang.String LOCK_SCREEN = "ariel.permission.LOCK_SCREEN";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_LIVEDISPLAY = "cyanogenmod.permission.MANAGE_LIVEDISPLAY";
     field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";

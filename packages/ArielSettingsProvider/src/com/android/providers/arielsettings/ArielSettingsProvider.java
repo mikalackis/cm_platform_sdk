@@ -185,9 +185,9 @@ public class ArielSettingsProvider extends ContentProvider {
         // Framework can't do automatic permission checking for calls, so we need
         // to do it here.
         if (ArielSettings.CALL_METHOD_PUT_SYSTEM.equals(method)) {
-            enforceWritePermission(ariel.platform.Manifest.permission.WRITE_SETTINGS);
+            enforceWritePermission(cyanogenmod.platform.Manifest.permission.WRITE_SETTINGS);
         } else {
-            enforceWritePermission(ariel.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
+            enforceWritePermission(cyanogenmod.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
         }
 
         // Put methods
@@ -572,11 +572,11 @@ public class ArielSettingsProvider extends ContentProvider {
         if ((ArielDatabaseHelper.ArielTableNames.TABLE_SECURE.equals(tableName) ||
                 ArielDatabaseHelper.ArielTableNames.TABLE_GLOBAL.equals(tableName)) &&
                 getContext().checkCallingOrSelfPermission(
-                        ariel.platform.Manifest.permission.WRITE_SECURE_SETTINGS) !=
+                        cyanogenmod.platform.Manifest.permission.WRITE_SECURE_SETTINGS) !=
                         PackageManager.PERMISSION_GRANTED) {
             throw new SecurityException(
                     String.format("Permission denial: writing to cm secure settings requires %1$s",
-                            ariel.platform.Manifest.permission.WRITE_SECURE_SETTINGS));
+                            cyanogenmod.platform.Manifest.permission.WRITE_SECURE_SETTINGS));
         }
     }
 

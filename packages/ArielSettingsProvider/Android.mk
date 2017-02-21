@@ -13,7 +13,7 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    com.ariel.platform.internal
+    org.cyanogenmod.platform.internal
 
 include $(BUILD_PACKAGE)
 
