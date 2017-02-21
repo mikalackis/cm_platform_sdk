@@ -121,7 +121,8 @@ LOCAL_REQUIRED_MODULES := services
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(ariel_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src))
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(ariel_sdk_src))
 
 # Included aidl files from cyanogenmod.app namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
@@ -183,7 +184,8 @@ LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
     $(call all-java-files-under, $(cyanogenmod_sdk_internal_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src)) \
+    $(call all-Iaidl-files-under, $(ariel_sdk_src)) \
 
 # Included aidl files from cyanogenmod.app namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java

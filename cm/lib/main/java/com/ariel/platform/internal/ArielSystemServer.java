@@ -66,6 +66,7 @@ public class ArielSystemServer {
     }
 
     private void startServices() {
+/*
         final Context context = mSystemContext;
         final SystemServiceManager ssm = LocalServices.getService(SystemServiceManager.class);
         String[] externalServices = context.getResources().getStringArray(
@@ -94,6 +95,7 @@ public class ArielSystemServer {
         }
 
         Slog.i(TAG, "ArielSystemServer services started!");
+*/
     }
 
     private void reportWtf(String msg, Throwable e) {

@@ -29,7 +29,7 @@ import android.util.Log;
 import ariel.app.ArielContextConstants;
 import ariel.app.IArielFirewallManager;
 
-import ariel.platform.Manifest;
+import cyanogenmod.platform.Manifest;
 
 import com.ariel.platform.internal.ArielSystemService;
 import com.ariel.platform.internal.daemon.ArielNativeDaemonConnector;
